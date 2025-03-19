@@ -1,0 +1,153 @@
+/*****************************************************************************************/
+/*****************************************************************************************/
+/* Starts with 'Global' style which is relavant for entire index.html and major classes. */
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+body {
+  margin-left: 0;                        /* Gets rid of white-sliver on left margin*/
+  font-family: "Montserrat", sans-serif; /* default font-style for entire <body> */
+  cursor: default;                       /* Makes 'pointer' cursor default */
+}
+
+.wrapper {          /* prevents the <body> from growing too wide*/
+  max-width: 760px; /* Width stops shrinking when <=760px */
+  margin: 0 auto;
+}
+
+/*****************************************************************************************/
+/*****************************************************************************************/
+/******************* Styling for header-menu for >=760px. ********************************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+.header-menu {
+  position: fixed;  /* Ensures header-menu STAYS fixed at top (essential for 'floating' menu) */
+  top: 0;           /* No blank space margin at top */
+  max-width: 760px; /* Prevents menu from being TOO wide for desktop */
+  width: 100%;      /* The Menu covers entire screen from left to right*/
+
+  background-color: rgba(51, 39, 39, 0.726); /* Only make bg color opaque WITHOUT affecting text!*/
+
+  display: flex;    /* Enables flexbox layout mode for header-menu */
+  justify-content: space-evenly; /* Even spacing between items inside header-menu*/
+
+  z-index: 2;       /* ENsures header-menu floats on front */
+}
+
+.header-menu ul {
+  list-style-type: none;           /* Removes list bullet points */
+  width: 100%;                     /* 100% of menu's width covered */
+  display: flex;                   /* Enables flexbox layout mode for header-menu */
+  justify-content: space-evenly;   /* Even spacing between items inside header-menu*/
+}
+
+.header-menu li a {  /* For style text in header menu */
+  color: white;                               /* White colored text */
+  text-decoration: none;                        /* removes underline */
+  font-family: "Libre Baskerville", sans-serif; /* Text-font for menu */
+  font-style: italic;                           /* Italic menu items*/
+}
+.header-menu li a:hover {
+  color: red;
+  cursor: default;
+}
+
+/*****************************************************************************************/
+/*****************************************************************************************/
+/************** Styling for 'about' class and sub-sections for >=760px. ******************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+.about {
+  padding-top: 30px; /* Padding to enable 'menu' to stay above */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-me {
+  width: 70%;
+  height: 100%;
+}
+
+.photo-container {
+  align-self: flex-start;  /* Ensures container 'float' to top in flex parent with resizing screen*/
+
+  width: 200px; /* Default width of image */
+  height: 100%; /* height scales with chosen width */
+  top: 30px;    /* margin on top-side of image container*/
+
+  overflow: hidden; /* Hide any part of the image that goes beyond the circle */
+  border-radius: 5%; /* Make the container circular/ovualar */
+  position: relative; /* Optional, for positioning the image within the circle */
+}
+
+.photo-container img {
+  width: 100%; /* Image matches full size of parent '.photo-container' */
+}
+
+/*****************************************************************************************/
+/*****************************************************************************************/
+/************** Styling for 'project' class and sub-sections for >=760px. ****************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+.projects .project { /* Created a dashed border line under each project */
+  border-bottom: 1px dashed #343434;
+  padding: 25px 0 ;
+}
+.projects .project:last-of-type { /* Makes sure there's no dashed border line at bottom of LAST project*/
+  border-bottom: none;
+}
+
+.project .description {     /* Enables flex-box for 'description' class components */
+    display: flex;
+    padding-bottom: 10px;;
+}
+
+.project .description-left { /* Sets size are of 'description' next to button(s) */
+    max-width: 70%;
+    padding-right: 4px;
+}
+
+#highlight {    /* Underlines and bolds the 'Project #' declaration */
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.project .bttn-right {  /*Creates a 'button' class for project 'live demo' and 'Github repository' links */
+
+    color: #f7fff7;      /* Button text color */
+    background: #2f3061; /* Button backgorund color */
+
+    padding: 8px 12px;  /* Makes button look 'larger' by adding padding */
+    border-radius: 4px; /* 'Roundness' of button corners */
+
+    text-align: center; /* Centers text inside bttn */
+    height: 100%;       /* dynamic height of button*/
+
+    align-self: center;  /* Centers vertically if parent if 'flex' or 'grid'*/
+    margin: auto;        /* Centers horizontall if parent if 'flex' */
+}
+
+.proj-img-bottom img {
+    max-width: 100%;        /* Ensure image never exceeds container, ultimately causing scaling. */
+}
+
+/*
+@media only screen and (max-width: 360px) {
+  .header-menu ul {
+    list-style-type: none; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .about {
+    padding-top: 100px; 
+  }
+}
+*/

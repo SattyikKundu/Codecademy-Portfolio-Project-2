@@ -1,61 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
     <link href="css/style.css" rel="stylesheet" />
     <title>Sattyik Kundu</title>
-</head>
-<body>
-    <div class="header">
-        <div class="header-menu">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Featured Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#non">Contact</a></li>
-            </ul>
-        </div>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header-menu">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Featured Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#non">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="about">
+    <div class="wrapper">
+      <div class="about">
         <div class="about-me">
-            <h2>About Me</h2>
-            <p>Hi! My name is Sattyik Kundu. As a full-stack developer, I specialize in developing web apps
-                using the PERN tech stack, which consists of Postgre SQL, Express.js, React, and Node.js.
-            </p>
-            <p>
-                My interest in things web-related began in my early 20s. I first started by creating my own
-                websites while dabbling with several web-related tools and languages like HTML, CSS, WordPress, PHP, SQL, JavaScript, and more.
-            </p>
-            <p>
-                In my recent years, my interest has expanded to full-fledged web development. This has 
-                eventually lead me to a fulfilling career change, which is where I am today.
-            </p>
+          <h2>About Me</h2>
+          <p>
+            Hi! My name is Sattyik Kundu. As a full-stack developer, I
+            specialize in developing web apps using the PERN tech stack, which
+            consists of Postgre SQL, Express.js, React, and Node.js.
+          </p>
+          <p>
+            My interest in things web-related began in my early 20s. I first
+            started by creating my own websites while dabbling with several
+            web-related tools and languages like HTML, CSS, WordPress, PHP, SQL,
+            JavaScript, and more.
+          </p>
+          <p>
+            In my recent years, my interest has expanded to full-fledged web
+            development. This has eventually lead me to a fulfilling career
+            change, which is where I am today.
+          </p>
         </div>
-        <div class="photo">
-            <div class="photo-container" >
-            </div>
+        <div class="photo-container">
+          <img src="images/passport_sized_photo.jpeg" />
         </div>
+      </div>
     </div>
-    <div class="projects">
+    <div class="wrapper">
+      <div class="projects">
         <h2>Featured Projects</h2>
-        <p>View selected projects below. More information can be found at ...(github link)...</p>
+        <p>
+          View selected projects below. More information can be found at
+          <a href="https://github.com/SattyikKundu">github.com/SattyikKundu</a>
+        </p>
         <div class="project">
-            <div class="description-top"></div>
-            <div class="proj-img-bottom"></div>
+          <div class="description">
+            <div class="description-left">
+                <span id='highlight'>Project #1</span>: This is JavaScript program demonstrating my mastery of the
+                fundamentals of JavaScript syntax and structures. Upon
+                exeuction, the program returns 3 random life advices.
+            </div>
+            <div class="bttn-right">GitHub Repository</div>
+          </div>
+          <div class="proj-img-bottom">
+            <i>Below is sample output from program execution</i>:
+            <img src="images/project_1_output.png" />
+          </div>
         </div>
         <div class="project">
-            <div class="description-right"></div>
+            <div class="description">
+                <div class="description-left">
+                    <span id='highlight'>Project #2</span>: This porfolio website itself demonstrates my
+                    fundamentals in several web design and development aspects
+                    including HTML, CSS, Flexbox, Responsive web design, and etc.
+                    Click on the GitHub repository to see full code.
+                </div>
+                <div class="bttn-right">GitHub Repository</div>
+              </div>
+        <div class="project">
+            <div class="description"></div>
             <div class="proj-img-left"></div>
-        </div>
+          </div>
+      </div>
     </div>
-    <div class="skills">
-        <div class="web-skills">
-
-        </div>
-        <div class="other-skills">
-
-        </div>
+    <div class="wrapper">
+      <div class="skills">
+        <div class="web-skills"></div>
+        <div class="other-skills"></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
