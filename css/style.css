@@ -6,13 +6,53 @@
 
 body {
   margin-left: 0;                        /* Gets rid of white-sliver on left margin*/
+  margin-bottom: 0;                      /* Removes white-sliver at bottom of viewport*/
+  margin: 0;
   font-family: "Montserrat", sans-serif; /* default font-style for entire <body> */
   cursor: default;                       /* Makes 'pointer' cursor default */
+
+  background-image: url(../images/abstract_background_image.jpg);
 }
 
 .wrapper {          /* prevents the <body> from growing too wide*/
   max-width: 760px; /* Width stops shrinking when <=760px */
+  height: 100%;
   margin: 0 auto;
+
+  display: flex;    /* flex and flex-direction used to make 'wrappers' stack due to nature of flex blocks*/
+  flex-direction: column;
+}
+
+.wrapper-about {
+    background-image: url(../images/olive_green_background_texture.jpg);
+}
+
+.wrapper-projects {
+    background-image: url(../images/aqua_background_texture.jpg);
+}
+
+.wrapper-skills {
+    background-image: url(../images/paper_texture.jpg);
+}
+
+.icon {
+    width: 60px;
+    height: 100%;
+    padding: 10px;
+}
+
+.footer {
+    background-color: rgb(56, 51, 51);
+    width: 100%;
+    height: 30px;
+    left:0;
+    bottom: 0;
+    padding: 0;
+}
+
+.bottom {
+    bottom: 0;
+    padding-bottom: 0;
 }
 
 /*****************************************************************************************/
@@ -72,7 +112,7 @@ body {
   height: 100%;
 }
 
-.photo-container {
+.portrait-container {
   align-self: flex-start;  /* Ensures container 'float' to top in flex parent with resizing screen*/
 
   width: 200px; /* Default width of image */
@@ -84,8 +124,8 @@ body {
   position: relative; /* Optional, for positioning the image within the circle */
 }
 
-.photo-container img {
-  width: 100%; /* Image matches full size of parent '.photo-container' */
+.portrait-container img {
+  width: 100%; /* Image matches full size of parent '.portrait-container' */
 }
 
 /*****************************************************************************************/
@@ -130,6 +170,10 @@ body {
 
     align-self: center;  /* Centers vertically if parent if 'flex' or 'grid'*/
     margin: auto;        /* Centers horizontall if parent if 'flex' */
+}
+
+.project .bttn-right:hover {
+    background: rgba(47, 48, 97, 80%);
 }
 
 .proj-img-bottom img {
