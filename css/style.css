@@ -38,15 +38,8 @@ body {
 }
 
 .menu-space { /* Margin space for top "About" 'wrapper' to make space for floating header menu */
-    margin-top: 40px;
+  margin-top: 40px;
 }
-
-.icon {  /* Size styling for imported icons*/
-    width: 56px;
-    height: 100%;
-    padding: 10px;
-}
-
 
 /*****************************************************************************************/
 /*****************************************************************************************/
@@ -62,19 +55,26 @@ body {
 
   background-color: rgba(51, 39, 39, 0.9); /* Only make bg color opaque WITHOUT affecting text!*/
 
-  display: flex;    /* Enables flexbox layout mode for header-menu */
-  justify-content: space-evenly; /* Even spacing between items inside header-menu*/
+  display: flex;            /* Enables flexbox layout mode for header-menu */
+  justify-content: center;  /* keeps unordered list inside centered*/
 
-  z-index: 2;       /* ENsures header-menu floats on front */
+  z-index: 2;               /* ENsures header-menu floats on front */
 
   border-radius: 0 0 30px 30px; /* Rounds bottom-most corners of header menu */
 }
 
 .header-menu ul {
-  list-style-type: none;           /* Removes list bullet points */
-  width: 100%;                     /* 100% of menu's width covered */
-  display: flex;                   /* Enables flexbox layout mode for header-menu */
-  justify-content: space-evenly;   /* Even spacing between items inside header-menu*/
+  list-style-type: none;  /* Removes list bullet points */
+  width: 90%;             /* 90% of menu container's width covered 
+                             (and prevent links from touching menu's edge). */
+  display: flex;          /* Enables flexbox layout mode for header-menu */
+
+  padding-left: 0px;      /* Removes left-padding causing menu-links to be off-center*/
+}
+
+.header-menu li {
+  flex-grow: 1;           /* Keeps objects space equally (since parent is flex object) */
+  text-align: center;     /* Helps keep text links centered (in conjunction with 'padding-left' above) */
 }
 
 .header-menu li a {  /* For style text in header menu */
@@ -97,20 +97,28 @@ body {
 .about {
   width: 100%;                   /* Matches width of 'wrapper' */
   display: flex;                 /* Turns 'about' class into fetch object */
+  flex-direction: row;           /* Ensures nested flex objects are in row*/
   justify-content: space-around; /* puts in-between space between nested objects*/
+
 }
 
-.about-me {
- /* width: fit-content; */
-  width: 60%;
-  height: 100%; /* Height matches 'wrapper' */
+.about-me { /* Ensures space for portrait on right*/
+  width: 55%; 
+}
+
+@media only screen and (max-width: 640px) {
+  .about-me {
+    width: 48%; /* Adjustment for shrinking screen width*/
+  }
 }
 
 .portrait-container {
   align-self: flex-start;  /* Ensures container 'float' to top in flex parent with resizing screen*/
 
   width: 200px; /* Default width of image */
-  top: 30px;    /* margin on top-side of image container*/
+  min-width: 180px;
+  top: 30px;    /* Moves container 30px downward 
+                   (requires relative/absolute/fixed position to work!)*/
 
   overflow: hidden;   /* Hide any part of the image that goes beyond the circle */
   border-radius: 11%; /* Make the container's corners rounded. */
@@ -120,6 +128,38 @@ body {
 .portrait-container img {
   width: 100%; /* Image scales to size of parent '.portrait-container' */
 }
+
+
+@media only screen and (max-width: 480px) {
+
+  .about {
+    flex-direction: column;
+    align-items: center; /* Ensures everything inside is centered */
+    text-align: center;  /* Centers text inside */
+  }
+
+  .about-me {
+    width: 86%; /* Ensure white space on left/right edges of About description */
+  }
+
+  .portrait-container {
+    top: 0;               /* Undoes the 'top: 30px;' from earlier (works due to 'absolute' position) */
+    margin-bottom: 30px;  /* adds 30px at bottom to avoid bottom edge*/
+    width: 200px;         /* image takes full width of container*/
+
+    justify-content: center; /* Centers image inside container */
+    margin-top: 20px;        /* Adds space between text and image */
+    align-self: center;      /* Centers horizontally if parent if 'flex' or 'grid'*/
+
+    /*
+    Altenative: "margin: 20px auto 30px auto;"
+    This replaces 'margin-bottom', 'margin-top', and align-self.
+    the 'auto' makes left and right sides equal.
+    */
+  }
+
+}
+
 
 /*****************************************************************************************/
 /*****************************************************************************************/
@@ -167,7 +207,11 @@ body {
     height: 100%;       /* dynamic height of button*/
 
     align-self: center;  /* Centers vertically if parent if 'flex' or 'grid'*/
-    margin: auto;        /* Centers horizontally if parent if 'flex' */
+    margin: 0 auto;      /* Centers horizontally if parent if 'flex' 
+                            since 'auto' makes both sides equi-distant. 
+                            Alternative is to use "margin: auto" for both vertical 
+                            & horizontal centering and remove "align-self: center".
+                            */
 }
 
 .project .button-right:hover {
@@ -178,8 +222,62 @@ body {
     max-width: 100%;        /* Ensure image never exceeds container, ultimately causing scaling. */
 }
 
+.proj-img-left img {
+  width: 150px;
+  height: 150px;
+}
+
+.description-block-right .button-right {
+  height: 30px;
+  
+}
+
+@media only screen and (max-width: 480px) {
+
+  .all-projects h2, p { /* Header and intro text centered*/
+    text-align: center; 
+  }
+
+  .project .description { /*Nested Description and button are in columns*/
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .project .description-left{
+    max-width: none;
+    text-align: left;  /* Centers text inside */
+  }
+
+  .project .button-right {
+    margin-top: 10px;
+  }
+
+}
+
+/*****************************************************************************************/
+/*****************************************************************************************/
+/********************* Styling for 'skills' class  for >=760px. **************************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
 .skills {
     padding: 10px 20px 10px 20px;
+}
+
+.icon {  /* Size styling for imported icons*/
+  width: 56px;
+  height: 100%;
+  padding: 10px;
+}
+
+
+
+@media only screen and (max-width: 480px) { 
+  .skills h2, h3, p { /* Centers text for mobile screen size*/
+    text-align: center;
+  }
+
 }
 
 
@@ -206,19 +304,3 @@ body {
 .footer-wrapper {
   background-image: none; /* Removes background image of 'wrapper' at footer (since it was showing) */
 }
-
-/*
-@media only screen and (max-width: 360px) {
-  .header-menu ul {
-    list-style-type: none; 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-
-  .about {
-    padding-top: 100px; 
-  }
-}
-*/
