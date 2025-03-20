@@ -1,59 +1,52 @@
 /*****************************************************************************************/
 /*****************************************************************************************/
-/* Starts with 'Global' style which is relavant for entire index.html and major classes. */
+/* Starts with 'Global' styles which is relavant for entire index.html and major classes. */
 /*****************************************************************************************/
 /*****************************************************************************************/
 
 body {
   margin-left: 0;                        /* Gets rid of white-sliver on left margin*/
   margin-bottom: 0;                      /* Removes white-sliver at bottom of viewport*/
-  margin: 0;
+  margin: 0;                             /* No margins around <body> */
   font-family: "Montserrat", sans-serif; /* default font-style for entire <body> */
   cursor: default;                       /* Makes 'pointer' cursor default */
 
-  background-image: url(../images/abstract_background_image.jpg);
+  /* Seamless background pattern for visuals*/
+  background-image: url(../images/body_tiles_background_small_edited.png); 
 }
 
-.wrapper {          /* prevents the <body> from growing too wide*/
-  max-width: 760px; /* Width stops shrinking when <=760px */
-  height: 100%;
-  margin: 0 auto;
+.wrapper {          /* prevents any nested <div> from growing too wide*/
+  max-width: 760px; /* Width stops growing for >760px */
+    
+  margin: 0 auto; /* Centers block-level components horizontally 
+                     (since <body> doesn't define 'display', child <div> is block by default). 
+                     '0' means no top or bottom margins (no vertical space)
+                     'auto' makes left & right margins equal (centering inside parent) 
+                    */
 
-  display: flex;    /* flex and flex-direction used to make 'wrappers' stack due to nature of flex blocks*/
-  flex-direction: column;
+  display: flex;          /* Turns 'wrapper' containers into flex objects */
+  flex-direction: column; /* This causes 'wrappers' flex objects to STACK wtihout in-between spaces*/
+
+  border-radius: 30px;    /* Rounded main container corners for styling */
+  margin-top: 30px;       /* Creates 30px gap between blocks (to enable in-between spaces) */
+
+  background-image: url(../images/paper_texture.jpg); /* Background image texture for each 'wrapper' */
 }
 
-.wrapper-about {
-    background-image: url(../images/olive_green_background_texture.jpg);
+.shadow { /* Turns associated object(s) with this class to have shadow pop-up effect */
+  box-shadow: 5px 5px 5px rgb(116, 101, 101);
 }
 
-.wrapper-projects {
-    background-image: url(../images/aqua_background_texture.jpg);
+.menu-space { /* Margin space for top "About" 'wrapper' to make space for floating header menu */
+    margin-top: 40px;
 }
 
-.wrapper-skills {
-    background-image: url(../images/paper_texture.jpg);
-}
-
-.icon {
-    width: 60px;
+.icon {  /* Size styling for imported icons*/
+    width: 56px;
     height: 100%;
     padding: 10px;
 }
 
-.footer {
-    background-color: rgb(56, 51, 51);
-    width: 100%;
-    height: 30px;
-    left:0;
-    bottom: 0;
-    padding: 0;
-}
-
-.bottom {
-    bottom: 0;
-    padding-bottom: 0;
-}
 
 /*****************************************************************************************/
 /*****************************************************************************************/
@@ -67,12 +60,14 @@ body {
   max-width: 760px; /* Prevents menu from being TOO wide for desktop */
   width: 100%;      /* The Menu covers entire screen from left to right*/
 
-  background-color: rgba(51, 39, 39, 0.726); /* Only make bg color opaque WITHOUT affecting text!*/
+  background-color: rgba(51, 39, 39, 0.9); /* Only make bg color opaque WITHOUT affecting text!*/
 
   display: flex;    /* Enables flexbox layout mode for header-menu */
   justify-content: space-evenly; /* Even spacing between items inside header-menu*/
 
   z-index: 2;       /* ENsures header-menu floats on front */
+
+  border-radius: 0 0 30px 30px; /* Rounds bottom-most corners of header menu */
 }
 
 .header-menu ul {
@@ -88,7 +83,7 @@ body {
   font-family: "Libre Baskerville", sans-serif; /* Text-font for menu */
   font-style: italic;                           /* Italic menu items*/
 }
-.header-menu li a:hover {
+.header-menu li a:hover { /* Makes menu options 'Red' on hover */
   color: red;
   cursor: default;
 }
@@ -100,32 +95,30 @@ body {
 /*****************************************************************************************/
 
 .about {
-  padding-top: 30px; /* Padding to enable 'menu' to stay above */
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  width: 100%;                   /* Matches width of 'wrapper' */
+  display: flex;                 /* Turns 'about' class into fetch object */
+  justify-content: space-around; /* puts in-between space between nested objects*/
 }
 
 .about-me {
-  width: 70%;
-  height: 100%;
+ /* width: fit-content; */
+  width: 60%;
+  height: 100%; /* Height matches 'wrapper' */
 }
 
 .portrait-container {
   align-self: flex-start;  /* Ensures container 'float' to top in flex parent with resizing screen*/
 
   width: 200px; /* Default width of image */
-  height: 100%; /* height scales with chosen width */
   top: 30px;    /* margin on top-side of image container*/
 
-  overflow: hidden; /* Hide any part of the image that goes beyond the circle */
-  border-radius: 5%; /* Make the container circular/ovualar */
-  position: relative; /* Optional, for positioning the image within the circle */
+  overflow: hidden;   /* Hide any part of the image that goes beyond the circle */
+  border-radius: 11%; /* Make the container's corners rounded. */
+  position:relative;  /* For position purposes */
 }
 
 .portrait-container img {
-  width: 100%; /* Image matches full size of parent '.portrait-container' */
+  width: 100%; /* Image scales to size of parent '.portrait-container' */
 }
 
 /*****************************************************************************************/
@@ -134,11 +127,16 @@ body {
 /*****************************************************************************************/
 /*****************************************************************************************/
 
-.projects .project { /* Created a dashed border line under each project */
+.all-projects {
+  padding: 10px 20px 10px 20px; /* Padding between content and edge of parent 'wrapper' */
+}
+
+.all-projects .project { /* Creates dashed border line under each project */
   border-bottom: 1px dashed #343434;
   padding: 25px 0 ;
 }
-.projects .project:last-of-type { /* Makes sure there's no dashed border line at bottom of LAST project*/
+
+.all-projects .project:last-of-type { /* Makes sure there's no dashed border line at bottom of LAST project*/
   border-bottom: none;
 }
 
@@ -157,7 +155,7 @@ body {
     font-weight: bold;
 }
 
-.project .bttn-right {  /*Creates a 'button' class for project 'live demo' and 'Github repository' links */
+.project .button-right {  /*Creates a 'button' class for project 'live demo' and 'Github repository' links */
 
     color: #f7fff7;      /* Button text color */
     background: #2f3061; /* Button backgorund color */
@@ -169,15 +167,44 @@ body {
     height: 100%;       /* dynamic height of button*/
 
     align-self: center;  /* Centers vertically if parent if 'flex' or 'grid'*/
-    margin: auto;        /* Centers horizontall if parent if 'flex' */
+    margin: auto;        /* Centers horizontally if parent if 'flex' */
 }
 
-.project .bttn-right:hover {
+.project .button-right:hover {
     background: rgba(47, 48, 97, 80%);
 }
 
 .proj-img-bottom img {
     max-width: 100%;        /* Ensure image never exceeds container, ultimately causing scaling. */
+}
+
+.skills {
+    padding: 10px 20px 10px 20px;
+}
+
+
+/*****************************************************************************************/
+/*****************************************************************************************/
+/***************** Styling for 'footer' class at bottom for >=760px. *********************/
+/*****************************************************************************************/
+/*****************************************************************************************/
+
+.footer { /* styling for bottom-most footer element */
+
+  border-radius: 30px 30px 0 0; /* Adds rounded corners on footer*/
+
+  background-color: rgb(56, 51, 51); /* Background color */
+  width: 100%;                         /* Max width inside 'wrapper' */
+  height: 30px;                        /* Height of footer */
+
+  display: flex;            /* Turns footer into 'flex' object */
+  justify-content: center;  /* In flex, centers item(s) horizontally */
+  align-items: center;      /* In flex, centers item(s) vertically */
+  color: white;
+}
+
+.footer-wrapper {
+  background-image: none; /* Removes background image of 'wrapper' at footer (since it was showing) */
 }
 
 /*

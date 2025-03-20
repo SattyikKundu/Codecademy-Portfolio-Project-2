@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Imports Font styles via Google APIs -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
     <link href="css/style.css" rel="stylesheet" />
-    <!-- all icons from https://devicon.dev/ -->
     <title>Sattyik Kundu</title>
   </head>
+
   <body>
-    <div class="wrapper wrapper-menu">
+    <div class="wrapper">
       <div class="header-menu">
         <ul>
           <li><a href="#about">About</a></li>
@@ -20,7 +22,8 @@
         </ul>
       </div>
     </div>
-    <div class="wrapper wrapper-about">
+
+    <div class="wrapper menu-space shadow">
       <div class="about">
         <div class="about-me">
           <h2>About Me</h2>
@@ -41,18 +44,20 @@
             change, which is where I am today.
           </p>
         </div>
-        <div class="portrait-container">
+        <div class="portrait-container shadow">
           <img src="images/passport_sized_photo.jpeg" />
         </div>
       </div>
     </div>
-    <div class="wrapper wrapper-projects">
-      <div class="projects">
+
+    <div class="wrapper shadow">
+      <div class="all-projects">
         <h2>Featured Projects</h2>
         <p>
           View selected projects below. More information can be found at
           <a href="https://github.com/SattyikKundu">github.com/SattyikKundu</a>
         </p>
+
         <div class="project">
           <div class="description">
             <div class="description-left">
@@ -60,13 +65,14 @@
                 fundamentals of JavaScript syntax and structures. Upon
                 exeuction, the program returns 3 random life advices.
             </div>
-            <div class="bttn-right">GitHub Repository</div>
+            <div class="button-right">GitHub Repository</div>
           </div>
           <div class="proj-img-bottom">
             <i>Below is sample output from program execution</i>:
             <img src="images/project_1_output.png" />
           </div>
         </div>
+
         <div class="project">
             <div class="description">
                 <div class="description-left">
@@ -75,22 +81,27 @@
                     including HTML, CSS, Flexbox, Responsive web design, and etc.
                     Click on the GitHub repository to see full code.
                 </div>
-                <div class="bttn-right">GitHub Repository</div>
+                <div class="button-right">GitHub Repository</div>
             </div>
-      </div> <!--
+        </div> 
+
+        <!--
       <div class="project">
         <div class="description"></div>
         <div class="proj-img-left"></div>
       </div> -->
+
+      </div>
     </div>
-</div>
-    <div class="wrapper wrapper-skills">
+
+    <div class="wrapper shadow">
       <div class="skills">
         <h2>Technologies and Skills</h2>
         <p>Below, I have listed my primary tools and technologies as a full-stack developer.
            Next, I've listed additional tools and technologies I can utilize if needed.</p>
         <h3>Full-Stack Web Development Skills</h3>
         <div class="web-skills">
+            <!-- NOTE: all icons from https://devicon.dev/ -->
             <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
             <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" />
             <img class="icon"src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" />
@@ -114,8 +125,9 @@
         </div>
       </div>
     </div>
-    <div class="wrapper bottom">
+    <div class="wrapper footer-wrapper">
         <div class="footer">
+          <p>Sattyik Kundu ©2025</p>
         </div>
     </div>
   </body>
