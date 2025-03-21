@@ -75,7 +75,14 @@
           </div>
           <div class="proj-img-bottom">
             <i>Below is sample output from program execution</i>:
-            <img src="images/project_1_output.png" />
+            <!-- When screen-width falls below 540px, horizontal scroller is 
+             added for seeing full image (without shrinking too small) -->
+            <div class="no-scrolling">
+              <img src="images/project_1_output.png" />
+            </div>
+            <div class="with-scrolling">
+              <img src="images/project_1_output.png" />
+            </div>
           </div>
         </div>
 
@@ -102,7 +109,8 @@
               <div class="description-nested">
                 <span id="highlight">Project #3</span>: The next project will be
                 a React app that fetches information using an API. Project,
-                code, and live demo will be added soon.
+                code, and live demo will be added soon (Also, image on left/above is 
+                a placeholder for the eventual project demo image).
               </div>
             </div>
             <div class="buttons">

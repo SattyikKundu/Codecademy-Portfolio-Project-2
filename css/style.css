@@ -90,8 +90,6 @@ body {
   cursor: default;
 }
 
-
-
 /**********************************************************************************************************/
 /**********************************************************************************************************/
 /************************Styling for 'about' class and sub-sections for >=760px.***************************/
@@ -227,8 +225,59 @@ body {
     max-width: 100%;        /* Ensure image never exceeds container, ultimately causing scaling. */
 }
 
+/***** Add a horizonal scroller for Project#1 demo image *****/
 
-@media only screen and (max-width: 480px) { /* Improves reponsiveness of 'Project' section for <=480px */
+.no-scrolling {  /* Set "no-scolling" class <div> as block  */
+  display: block;
+}
+
+.with-scrolling { /* The horizonal scroller doesn't trigger until 540px width */
+  display: none;
+}
+
+@media only screen and (max-width: 720px) { /* Used to trigger horizontal scroller at 540px or less */
+
+  .no-scrolling { /*Removes non-scrollable version of img (important keyword ensures this) */
+    display: none !important;
+  }
+
+  .with-scrolling {
+    display: block;       /* container behaves as block-level element*/
+
+    overflow-x: auto;     /* triggers horizontal scrolling when content overflows*/
+                          /* 'overflow-y: hidden;' not needed (since vertical is too small to trigger(?)) */
+                          /* 'white-space: nowrap;' not need since there's no other images to wrap under */ 
+    max-width: 100%;      /*  images container scales with parent container */
+  }                             
+
+  .with-scrolling img{      
+    min-width: 721px;     /* Ensures image is wide enough for scrolling */
+  }
+
+  /* These are used to stylize horizontal-scroller */
+  .with-scrolling::-webkit-scrollbar {
+    height: 8px;   /* Controls scroll bar's thickness */
+  }
+  
+  .with-scrolling::-webkit-scrollbar-track {
+    background: #e0e0e0;   /* Scroll track's background color is light-gray */
+    border-radius: 10px;       /* Rounded corners for scrollbar track */
+  }
+  
+  .with-scrolling::-webkit-scrollbar-thumb {
+    background: #2f3061;        /* Dark color for actual thumb (aka 'horizontal scroller') contrast */
+    border-radius: 10px;          /* Rounded corners for thumb */
+    border: 1px solid #e0e0e0;  /* Adds some space and contrast between thumb and track */
+  }
+  
+  .with-scrolling::-webkit-scrollbar-thumb:hover {
+    background: rgba(47, 48, 97, 80%); /* Thumb's color lightens on hover just like all buttons */
+  }
+
+}
+
+/* Improves reponsiveness of 'Project' section for <=480px */
+@media only screen and (max-width: 480px) { 
 
   .all-projects h2, p { /* Header and intro text centered */
     text-align: center; 
