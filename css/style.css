@@ -1,8 +1,8 @@
-/*****************************************************************************************/
-/*****************************************************************************************/
-/* Starts with 'Global' styles which is relavant for entire index.html and major classes. */
-/*****************************************************************************************/
-/*****************************************************************************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+/******* Starts with 'Global' styles which is relavant for entire index.html and major classes. ***********/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
 
 body {
   margin-left: 0;                        /* Gets rid of white-sliver on left margin*/
@@ -16,7 +16,7 @@ body {
 }
 
 .wrapper {          /* prevents any nested <div> from growing too wide*/
-  max-width: 760px; /* Width stops growing for >760px */
+  max-width: 760px; /* Width stops growing for over 760px */
     
   margin: 0 auto; /* Centers block-level components horizontally 
                      (since <body> doesn't define 'display', child <div> is block by default). 
@@ -41,11 +41,13 @@ body {
   margin-top: 40px;
 }
 
-/*****************************************************************************************/
-/*****************************************************************************************/
-/******************* Styling for header-menu for >=760px. ********************************/
-/*****************************************************************************************/
-/*****************************************************************************************/
+
+
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+/******************************** Styling for header-menu for >=760px. ************************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
 
 .header-menu {
   position: fixed;  /* Ensures header-menu STAYS fixed at top (essential for 'floating' menu) */
@@ -88,11 +90,13 @@ body {
   cursor: default;
 }
 
-/*****************************************************************************************/
-/*****************************************************************************************/
-/************** Styling for 'about' class and sub-sections for >=760px. ******************/
-/*****************************************************************************************/
-/*****************************************************************************************/
+
+
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+/************************Styling for 'about' class and sub-sections for >=760px.***************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
 
 .about {
   width: 100%;                   /* Matches width of 'wrapper' */
@@ -161,11 +165,11 @@ body {
 }
 
 
-/*****************************************************************************************/
-/*****************************************************************************************/
-/************** Styling for 'project' class and sub-sections for >=760px. ****************/
-/*****************************************************************************************/
-/*****************************************************************************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+/***********************Styling for 'project' class and sub-sections for >=760px.**************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
 
 .all-projects {
   padding: 10px 20px 10px 20px; /* Padding between content and edge of parent 'wrapper' */
@@ -185,7 +189,7 @@ body {
     padding-bottom: 10px;;
 }
 
-.project .description-left { /* Sets size are of 'description' next to button(s) */
+.description .description-left { /* Sets size are of 'description' left to button(s) */
     max-width: 70%;
     padding-right: 4px;
 }
@@ -204,44 +208,35 @@ body {
     border-radius: 4px; /* 'Roundness' of button corners */
 
     text-align: center; /* Centers text inside bttn */
+
     height: 100%;       /* dynamic height of button*/
 
-    align-self: center;  /* Centers vertically if parent if 'flex' or 'grid'*/
-    margin: 0 auto;      /* Centers horizontally if parent if 'flex' 
+    align-self: center;  /* Centers vertically if parent uses 'flex' or 'grid'*/
+    margin: 0 auto;      /* Centers horizontally if parent uses 'flex' 
                             since 'auto' makes both sides equi-distant. 
                             Alternative is to use "margin: auto" for both vertical 
                             & horizontal centering and remove "align-self: center".
                             */
 }
 
-.project .button-right:hover {
+.project .button-right:hover { /* Color change when hovering over button*/
     background: rgba(47, 48, 97, 80%);
 }
 
-.proj-img-bottom img {
+.proj-img-bottom img {      /* Styling for image under Project #1*/
     max-width: 100%;        /* Ensure image never exceeds container, ultimately causing scaling. */
 }
 
-.proj-img-left img {
-  width: 150px;
-  height: 150px;
-}
 
-.description-block-right .button-right {
-  height: 30px;
-  
-}
+@media only screen and (max-width: 480px) { /* Improves reponsiveness of 'Project' section for <=480px */
 
-@media only screen and (max-width: 480px) {
-
-  .all-projects h2, p { /* Header and intro text centered*/
+  .all-projects h2, p { /* Header and intro text centered */
     text-align: center; 
   }
 
   .project .description { /*Nested Description and button are in columns*/
     display: flex;
     flex-direction: column;
-    
   }
 
   .project .description-left{
@@ -252,40 +247,101 @@ body {
   .project .button-right {
     margin-top: 10px;
   }
+}
+
+/********************************************************************/
+/********* Below is relevant for Project #3 and onwards!!  **********/
+/********************************************************************/
+
+.with-image {  /* 2nd class with 'description' class to use 
+                  flexbox to handle nested image and description <div> */
+  display: flex;
+  flex-direction: row; /* Puts nested <div> in row */
+  gap: 15px;           /* Creates Gap/space between nested <div> */
+}
+
+.proj-img-left img {   /* Keeps fixed image size for placeholder image (for snap shot of live demo!).*/
+  width: 150px;        /* Project demo image has fixed 150px width */
+  height: 100%;        /* Image height scales with fixed width */
+  border-radius: 15px; /* Makes project demo image's corners rounder! */
+}
+
+.buttons {            /* Used to manage multiple buttons ('Github repo' and 'Live Demo')*/
+  display: flex;      /* 'Flex' used ot present buttons vertically(column) */
+  flex-direction: column;
+
+  margin-right: auto; /* Ensure open-space margin on right is filled */
+  margin-left: auto;  /* Ensure open-space margin on left is filled */
+                      /* Together, margin-right and margin-left makes <div> centered 
+                         and VISUALLY line up with buttons for previous projects listed */
+}
+
+.buttons .button-right { /* Styling for buttons inside 'buttons' <div> class */
+  width:fit-content;     /* Button width matches text*/
+  height:fit-content;    /* Button height matches text */
+  margin: auto;          /* Ensures equi-disance/centered spacing vertically & horizonally */
+}
+
+@media only screen and (max-width: 480px) { 
+  .buttons .button-right {  /* This is to handle buttons in 'buttons' class 
+                                that are touching in 'mobile' size */
+
+    margin-top: 20px; /* 'margin-top' adds space on top of buttons */
+  }
+}
+
+@media only screen and (max-width: 360px) {  /* Used to get project demo image above description on mobile screens*/
+
+  .with-image { /* On mobile screens, the demo image and 
+                   description aligns vertically for better visuals
+                   (note: class="with-image" is an accompanying class 
+                   for <div> using class='description-left' 
+                   (which already has 'flex') */
+    flex-direction: column; 
+  }
+
+  .proj-img-left { 
+    display: flex; /* Turn project demo image into flex object */
+    width: 100%;   /* Matches width of parent container */
+  }
+  
+  .proj-img-left img {
+    width: 70%;          /* Only 70% of parent container seems like a good size visually (not too big or small) */
+    align-self: center;  /* Centers vertically when parent uses 'flex' or 'grid'*/
+    margin: 0 auto;      /* Centers horizontally if parent uses 'flex' since 'auto' 
+                            makes both sides equi-distant. Alternative is to use "margin: auto" 
+                            for both vertical & horizontal centering and remove "align-self: center". */
+  }
 
 }
 
-/*****************************************************************************************/
-/*****************************************************************************************/
-/********************* Styling for 'skills' class  for >=760px. **************************/
-/*****************************************************************************************/
-/*****************************************************************************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+/***********************Styling for 'skills' class and sub-sections for >=760px.***************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
 
-.skills {
+.skills { /* Creates spacing around the main content against the 'wrapper' parent class */
     padding: 10px 20px 10px 20px;
 }
 
-.icon {  /* Size styling for imported icons*/
+.icon {  /* Size styling for all imported icons*/
   width: 56px;
   height: 100%;
   padding: 10px;
 }
 
-
-
 @media only screen and (max-width: 480px) { 
-  .skills h2, h3, p { /* Centers text for mobile screen size*/
+  .skills h2, h3, p { /* Centers text for mobile screen for visuals*/
     text-align: center;
   }
-
 }
 
-
-/*****************************************************************************************/
-/*****************************************************************************************/
-/***************** Styling for 'footer' class at bottom for >=760px. *********************/
-/*****************************************************************************************/
-/*****************************************************************************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
+/***********************Styling for 'footer' class and sub-sections for >=760px.***************************/
+/**********************************************************************************************************/
+/**********************************************************************************************************/
 
 .footer { /* styling for bottom-most footer element */
 
@@ -298,7 +354,7 @@ body {
   display: flex;            /* Turns footer into 'flex' object */
   justify-content: center;  /* In flex, centers item(s) horizontally */
   align-items: center;      /* In flex, centers item(s) vertically */
-  color: white;
+  color: white;           /* White color text */
 }
 
 .footer-wrapper {
