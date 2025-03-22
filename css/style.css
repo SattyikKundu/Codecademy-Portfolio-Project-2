@@ -5,9 +5,9 @@
 /**********************************************************************************************************/
 
 body {
-  margin-left: 0;                        /* Gets rid of white-sliver on left margin*/
+  /*margin: 0;                          /* NOT NEEDED =>No margins around <body> */
+  /*margin-left: 0;                      /* NOT NEEDED => Gets rid of white-sliver on left margin*/
   margin-bottom: 0;                      /* Removes white-sliver at bottom of viewport*/
-  margin: 0;                             /* No margins around <body> */
   font-family: "Montserrat", sans-serif; /* default font-style for entire <body> */
   cursor: default;                       /* Makes 'pointer' cursor default */
 
