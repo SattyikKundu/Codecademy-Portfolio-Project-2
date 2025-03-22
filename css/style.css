@@ -4,6 +4,22 @@
 /**********************************************************************************************************/
 /**********************************************************************************************************/
 
+
+/**** Below 2 modifications handle css scrolling for Github pages ****/
+html {
+  scroll-behavior: smooth;  /* Ensure smooth scrolling and not jumping 
+                               to anchor link(#) in header menu*/
+}
+
+#about, #projects, #skills { 
+  scroll-margin-top: 80px; /* Margin ensures that anchor links does 
+                              not overlap with section header text.
+                              Instead, the menu is right above anchored section.
+                              */
+}
+
+/******************************************************/
+
 body {
   /*margin: 0;                          /* NOT NEEDED =>No margins around <body> */
   /*margin-left: 0;                      /* NOT NEEDED => Gets rid of white-sliver on left margin*/
