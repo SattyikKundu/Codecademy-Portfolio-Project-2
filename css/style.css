@@ -263,6 +263,24 @@ body {
     max-width: 100%;        /* Ensure image never exceeds container, ultimately causing scaling. */
 }
 
+/*** Fix styling of button once <a href=''> is added to buttons ***/
+.project .button-right a {
+  /*color: inherit;           /* Inherits button text color */
+  text-decoration: none;    /* Removes underline */
+  /*display: block;           /* Makes the anchor fill the div */
+  /*width: 100%;  /**/
+  /*height: 100%; /**/
+}
+
+.project .button-right a:visited {
+  color: inherit;           /* Stops visited links from changing color */
+}
+
+.project .button-right a:focus {
+ /*outline: none;            /* Removes blue border when clicked */
+}
+
+
 /***** Add a horizonal scroller for Project#1 demo image *****/
 
 .no-scrolling {  /* Set "no-scolling" class <div> as block  */
