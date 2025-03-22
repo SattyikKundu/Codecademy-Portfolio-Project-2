@@ -12,7 +12,7 @@ html {
 }
 
 #about, #projects, #skills { 
-  scroll-margin-top: 80px; /* Margin ensures that anchor links does 
+  scroll-margin-top: 60px; /* Margin ensures that anchor links does 
                               not overlap with section header text.
                               Instead, the menu is right above anchored section.
                               */
