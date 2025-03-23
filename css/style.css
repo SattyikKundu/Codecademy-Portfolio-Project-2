@@ -264,22 +264,13 @@ body {
 }
 
 /*** Fix styling of button once <a href=''> is added to buttons ***/
-.project .button-right a {
-  /*color: inherit;           /* Inherits button text color */
-  text-decoration: none;    /* Removes underline */
-  /*display: block;           /* Makes the anchor fill the div */
-  /*width: 100%;  /**/
-  /*height: 100%; /**/
+.project .button-right a { /* Removes underline added to link by default */
+  text-decoration: none;    
 }
 
-.project .button-right a:visited {
-  color: inherit;           /* Stops visited links from changing color */
+.project .button-right a:visited { /* Stops visited links from changing color from preset button text color */
+  color: inherit;           
 }
-
-.project .button-right a:focus {
- /*outline: none;            /* Removes blue border when clicked */
-}
-
 
 /***** Add a horizonal scroller for Project#1 demo image *****/
 
