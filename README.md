@@ -4,7 +4,7 @@
 - Site used to demonstrate my web design skills using common technologies like HTML, CSS, etc.
 ---
 # 2.Original Project Overview from Codecademy
-Here are screenshots of the project overview/requirements from Codecademy:
+Here are screenshots of project requirements from Codecademy:
 ![Portfolio_website_overview_pt1](https://github.com/user-attachments/assets/16a41731-b3d4-4db0-ad3b-1a6ab00a3b73)
 ---
 ![Portfolio_website_overview_pt2](https://github.com/user-attachments/assets/ec148a51-b431-4a23-8c5e-b70a77b52c11)
