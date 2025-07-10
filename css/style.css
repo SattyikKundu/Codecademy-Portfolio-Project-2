@@ -258,17 +258,22 @@ body {
 .project .button-right:hover { /* Color change when hovering over button*/
     background: rgba(47, 48, 97, 80%);
 }
+.project .button-right:active {
+  transform: scale(0.9);
+}
+
 
 .proj-img-bottom img {      /* Styling for image under Project #1*/
     max-width: 100%;        /* Ensure image never exceeds container, ultimately causing scaling. */
 }
 
 /*** Fix styling of button once <a href=''> is added to buttons ***/
-.project > .button-right a { /* Removes underline added to link by default */
+.project .button-right a { /* Removes underline added to link by default */
+  color: white;
   text-decoration: none;    
 }
 
-.project > .button-right a:visited { /* Stops visited links from changing color from preset button text color */
+.project .button-right a:visited { /* Stops visited links from changing color from preset button text color */
   color: inherit; 
   text-decoration: none;            
 }
