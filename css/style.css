@@ -264,12 +264,13 @@ body {
 }
 
 /*** Fix styling of button once <a href=''> is added to buttons ***/
-.project .button-right a { /* Removes underline added to link by default */
+.project > .button-right a { /* Removes underline added to link by default */
   text-decoration: none;    
 }
 
-.project .button-right a:visited { /* Stops visited links from changing color from preset button text color */
-  color: inherit;           
+.project > .button-right a:visited { /* Stops visited links from changing color from preset button text color */
+  color: inherit; 
+  text-decoration: none;            
 }
 
 /***** Add a horizonal scroller for Project#1 demo image *****/
