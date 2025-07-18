@@ -17,7 +17,7 @@ Here are screenshots of project requirements from Codecademy:
 - <ins>_Here's the GitHub page link for the live demo_</ins>: https://sattyikkundu.github.io/Portfolio-Website-project
 - _First_, here's the home page (index.html) which contains sections like 'About Me', 'Featured Project', and 'Full-Stack Web Development Skills" (Note that screenshot is partially cut-out to save space).
  ![Portfolio_website_screenshort_index_page](https://github.com/user-attachments/assets/71d76b20-c053-41bf-b654-004fad43162e)  
-- _Second_, here's my Contact page (contact.html) with my contact information. It's currently incomplete, but will be finished in due time.
+- _Second_, here's my Contact page (contact.html) with my contact information. It's currently incomplete, but will be finished in due time.    
 ![Portfolio_website_screenshort_contact_page](https://github.com/user-attachments/assets/7f74c8c1-2f3c-4a44-a138-97495bae59a4)  
 ---
 # 4. Notable Features Summary:
